@@ -1,17 +1,20 @@
 const todoList = ['make dinner', 'make coffee'];
 
-let todoListHTML = '';
+renderTodoList();
 
-for (let i = 0; i < todoList.length; i++) {
-    const todo = todoList[i];
-    const html = `<p>${todo}</p>`;
-    todoListHTML += html;
+function renderTodoList() {
+    let todoListHTML = '';
+
+    for (let i = 0; i < todoList.length; i++) {
+        const todo = todoList[i];
+        const html = `<p>${todo}</p>`;
+        todoListHTML += html;
+    }
+    console.log(todoListHTML);
+
+    document.querySelector('.js-todo-list')
+        .innerHTML = todoListHTML;
 }
-console.log(todoListHTML);
-
-document.querySelector('.js-todo-list')
-    .innerHTML = todoListHTML;
-
 function addTodo() {
     const inputElement = document.querySelector('.js-name-input');
     const name = inputElement.value; // the value property represents the text in the textbox.
@@ -21,4 +24,5 @@ function addTodo() {
 
     inputElement.value = '';//value, or text in the textbox, resets to empty.
 
+    renderTodoList();
 }
