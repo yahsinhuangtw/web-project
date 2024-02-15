@@ -26,7 +26,6 @@ function renderTodoList() {
             </p>`;
         todoListHTML += html;
     }
-    console.log(todoListHTML);
 
     document.querySelector('.js-todo-list')
         .innerHTML = todoListHTML;
@@ -35,18 +34,17 @@ function addTodo() {
     const inputElement = document.querySelector('.js-name-input');
     const name = inputElement.value; // the value property represents the text in the textbox.
 
-    const dateInputElement = document.querySelector(.js-due-date-input); 
+    const dateInputElement = document.querySelector('.js-due-date-input'); 
 
     const dueDate = dateInputElement.value;
 
 
     todoList.push({
-        name: name,
-        dueDate: dueDate
+        //name: name,
+        //dueDate: dueDate
+        name,
+        dueDate
     });
-    
-    
-    console.log(todoList);
 
     inputElement.value = '';//value, or text in the textbox, resets to empty.
 
